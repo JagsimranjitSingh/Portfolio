@@ -1,0 +1,142 @@
+/* ------ Global Style ------ */
+@import url('https://fonts.googleapis.com/css2?family=Abel&family=Aclonica&family=Instrument+Serif:ital@0;1&family=Roboto+Slab:wght@100;300;400;500;700;900&display=swap');
+
+:root {
+    /* -Font Families- */
+    --font-abel: 'Abel';
+    --font-aclonica: 'Aclonica';
+    --font-instrument-serif: 'Instrument Serif';
+
+    /* -Background Color- */
+    --bg-color: #161616;
+    --bg-1: #FFFFFF;
+    --nav-color: #313131;
+    --footer-color: #000000;
+
+    /* -Button Colors- */
+    --submit-bg: #EF7E1C;
+    --submit-hover-bg: #ce670d;
+    --reset-bg: #313131;
+    --reset-hover-bg: #1e1e1e;
+    --btn-bg: #0088FF;
+    --btn-hover-bg: #0057a3;
+
+    /* -Text Colors- */
+    --text-1: #FFFDD0;
+    --text-2: #FFFFFF;
+    --text-3: #000000;
+
+    /* -Font Size- */
+    /* 96px */
+    --fs-name: 6rem;
+    /* 32px */
+    --fs-name-subheading: 2rem;
+    /* 48px */
+    --fs-heading: 3rem;
+    /* 36px */
+    --fs-subheading: 2.25rem;
+    /* 26px */
+    --fs-nav: 1.425rem;
+    /* 28px */
+    --fs-1: 1.75rem;
+    /* 24px */
+    --fs-2: 1.5rem;
+    /* 20px */
+    --fs-3: 1.25rem;
+
+    /* -Gap- */
+    /* 35px */
+    --nav-link-gap: 2.188rem;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+body {
+    color: var(--text-2);
+    background-color: var(--bg-color);
+    font-family: var(--font-abel);
+}
+/* ------ Global Style ------ */
+
+/* ------ NavBar ------ */
+header nav {
+    width: 90%;
+    height: auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: var(--nav-color);
+    position: fixed;
+    top: 3rem;
+    left: 50%;
+    transform: translateX(-50%);
+    font-family: var(--font-instrument-serif);
+    padding: 1.188rem 4.625rem;
+    border-radius: 30px;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    z-index: 100;
+}
+
+header nav.scrolled {
+    top: 0;
+    width: 100%;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.logo {
+    font-size: var(--fs-subheading);
+    font-style: italic;
+}
+
+.nav-links {
+    width: auto;
+    display: flex;
+    align-items: center;
+    column-gap: var(--nav-link-gap);
+    list-style: none;
+}
+
+.nav-links li a {
+    text-decoration: none;
+    color: var(--text-2);
+    font-size: var(--fs-nav);
+}
+
+.hamburger {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    gap: 5px;
+    z-index: 101;
+}
+
+.hamburger span {
+    width: 25px;
+    height: 3px;
+    background: var(--text-2);
+    border-radius: 5px;
+}
+
+.overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 99;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.overlay.active {
+    display: block;
+    opacity: 1;
+}
+/* ------ NavBar ------ */
