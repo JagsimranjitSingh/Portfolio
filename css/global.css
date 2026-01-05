@@ -61,6 +61,7 @@ body {
     background-color: var(--bg-color);
     font-family: var(--font-abel);
 }
+
 /* ------ Global Style ------ */
 
 /* ------ NavBar ------ */
@@ -85,6 +86,7 @@ header nav {
 header nav.scrolled {
     top: 0;
     width: 100%;
+    border-radius: 0;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
@@ -122,6 +124,18 @@ header nav.scrolled {
     border-radius: 5px;
 }
 
+.hamburger.active span:nth-child(1) {
+    transform: rotate(45deg) translate(8px, 8px);
+}
+
+.hamburger.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.hamburger.active span:nth-child(3) {
+    transform: rotate(-45deg) translate(8px, -8px);
+}
+
 .overlay {
     display: none;
     position: fixed;
@@ -139,4 +153,122 @@ header nav.scrolled {
     display: block;
     opacity: 1;
 }
+
+@media screen and (max-width: 1000px) {
+    header nav {
+        width: 93%;
+        padding: 1.188rem 2.5rem;
+    }
+
+    .nav-links {
+        column-gap: 1rem;
+    }
+}
+
+@media screen and (max-width: 786px) {
+    header nav {
+        top: 0;
+        width: 100%;
+        border-radius: 0;
+        padding: 1rem 2rem;
+    }
+
+    .hamburger {
+        display: flex;
+    }
+
+    /* Mobile Menu */
+    .nav-links {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: 85%;
+        height: 100vh;
+        background: rgba(30, 30, 30, 0.98);
+        -webkit-backdrop-filter: blur(10px);
+        backdrop-filter: blur(10px);
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 2rem;
+        transition: right 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        box-shadow: -5px 0 20px rgba(0, 0, 0, 0.5);
+    }
+
+    .nav-links.active {
+        right: 0;
+    }
+
+    .nav-links li {
+        opacity: 0;
+        transform: translateX(50px);
+        transition: all 0.3s ease;
+    }
+
+    .nav-links.active li {
+        opacity: 1;
+        transform: translateX(0);
+    }
+
+    /* Stagger animation for menu items */
+    .nav-links.active li:nth-child(1) {
+        transition-delay: 0.1s;
+    }
+
+    .nav-links.active li:nth-child(2) {
+        transition-delay: 0.2s;
+    }
+
+    .nav-links.active li:nth-child(3) {
+        transition-delay: 0.3s;
+    }
+
+    .nav-links.active li:nth-child(4) {
+        transition-delay: 0.4s;
+    }
+
+    .nav-links.active li:nth-child(5) {
+        transition-delay: 0.5s;
+    }
+
+    .nav-links li a {
+        font-size: 2rem;
+    }
+}
+
+@media screen and (max-width: 350px) {
+    .logo {
+        font-size: 1.2rem;
+    }
+
+    .hamburger {
+        gap: 3px;
+    }
+
+    .hamburger span {
+        width: 15px;
+        height: 1.8px;
+    }
+
+    .nav-links li a {
+        font-size: 1.2rem;
+    }
+
+    .hamburger.active span:nth-child(1) {
+        transform: rotate(45deg) translate(4px, 5px);
+    }
+
+    .hamburger.active span:nth-child(2) {
+        opacity: 0;
+    }
+
+    .hamburger.active span:nth-child(3) {
+        transform: rotate(-45deg) translate(4px, -5px);
+    }
+}
+
 /* ------ NavBar ------ */
+
+main {
+    min-height: 70rem;
+}
