@@ -47,6 +47,8 @@
     /* -Gap- */
     /* 35px */
     --nav-link-gap: 2.188rem;
+    /* 55px */
+    --icon-gap: 3.438rem;
 }
 
 * {
@@ -60,9 +62,18 @@ body {
     color: var(--text-2);
     background-color: var(--bg-color);
     font-family: var(--font-abel);
+    padding-top: 10.75rem;
 }
 
-/* ------ Global Style ------ */
+main {
+    min-height: 70rem;
+}
+
+hr {
+    width: 95%;
+    margin: 0 auto;
+}
+/* ------ End of Global Style ------ */
 
 /* ------ NavBar ------ */
 header nav {
@@ -75,7 +86,7 @@ header nav {
     position: fixed;
     top: 3rem;
     left: 50%;
-    transform: translateX(-50%);
+    transform: translateX(-50.05%);
     font-family: var(--font-instrument-serif);
     padding: 1.188rem 4.625rem;
     border-radius: 30px;
@@ -166,6 +177,10 @@ header nav.scrolled {
 }
 
 @media screen and (max-width: 786px) {
+    body {
+        padding-top: 8.75rem;
+    }
+
     header nav {
         top: 0;
         width: 100%;
@@ -236,11 +251,17 @@ header nav.scrolled {
     }
 }
 
-@media screen and (max-width: 350px) {
-    .logo {
-        font-size: 1.2rem;
+@media screen and (max-width: 450px) {
+    body {
+        padding-top: 7.5rem;
     }
 
+    .logo {
+        font-size: 1.5rem;
+    }
+}
+
+@media screen and (max-width: 350px) {
     .hamburger {
         gap: 3px;
     }
@@ -267,8 +288,10 @@ header nav.scrolled {
     }
 }
 
-/* ------ NavBar ------ */
-
-main {
-    min-height: 70rem;
+@media screen and (max-width: 300px) {
+    header nav {
+        padding: 0.875rem 1.5rem;
+    }
 }
+
+/* ------ End of NavBar ------ */

@@ -1,0 +1,203 @@
+/* ------ Global Style ------ */
+@import url('https://fonts.googleapis.com/css2?family=Abel&family=Aclonica&family=Instrument+Serif:ital@0;1&family=Roboto+Slab:wght@100;300;400;500;700;900&display=swap');
+
+:root {
+    /* -Font Families- */
+    --font-abel: 'Abel';
+    --font-aclonica: 'Aclonica';
+    --font-instrument-serif: 'Instrument Serif';
+
+    /* -Background Color- */
+    --bg-color: #161616;
+    --bg-1: #FFFFFF;
+    --nav-color: #313131;
+    --footer-color: #000000;
+
+    /* -Button Colors- */
+    --submit-bg: #EF7E1C;
+    --submit-hover-bg: #ce670d;
+    --reset-bg: #313131;
+    --reset-hover-bg: #1e1e1e;
+    --btn-bg: #0088FF;
+    --btn-hover-bg: #0057a3;
+
+    /* -Text Colors- */
+    --text-1: #FFFDD0;
+    --text-2: #FFFFFF;
+    --text-3: #000000;
+
+    /* -Font Size- */
+    /* 96px */
+    --fs-name: 6rem;
+    /* 32px */
+    --fs-name-subheading: 2rem;
+    /* 48px */
+    --fs-heading: 3rem;
+    /* 36px */
+    --fs-subheading: 2.25rem;
+    /* 26px */
+    --fs-nav: 1.425rem;
+    /* 28px */
+    --fs-1: 1.75rem;
+    /* 24px */
+    --fs-2: 1.5rem;
+    /* 20px */
+    --fs-3: 1.25rem;
+
+    /* -Gap- */
+    /* 35px */
+    --nav-link-gap: 2.188rem;
+    /* 55px */
+    --icon-gap: 3.438rem;
+}
+
+/* ------ End of Global Style ------ */
+
+/* ------ Hero Section ------ */
+.hero-sec {
+    width: 90%;
+    height: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+}
+
+.hero-content {
+    width: 39.875rem;
+    text-align: center;
+}
+
+.designation {
+    font-size: var(--fs-name-subheading);
+}
+
+.name {
+    font-size: var(--fs-name);
+    font-family: var(--font-aclonica);
+    margin-top: 1.125rem;
+    margin-bottom: 2.438rem;
+}
+
+.hero-icons {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--icon-gap);
+}
+
+.hero-icon {
+    cursor: pointer;
+}
+
+.hero-img img {
+    width: 36.063rem;
+    object-fit: cover;
+    object-position: center;
+}
+
+@media screen and (max-width: 1370px) {
+    .hero-sec {
+        flex-direction: column;
+        row-gap: 2rem;
+    }
+}
+
+@media screen and (max-width: 900px) {
+    .designation {
+        font-size: 1.75rem;
+    }
+
+    .name {
+        font-size: 5rem;
+    }
+
+    .hero-icons {
+        gap: 40px;
+    }
+
+    .hero-icon {
+        width: 40px;
+        height: 40px;
+    }
+
+    .hero-img img {
+        width: 28rem;
+    }
+
+    .hero-content {
+        width: auto;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .hero-img img {
+        width: 22rem;
+    }
+
+    .hero-icons {
+        gap: 30px;
+    }
+
+    .hero-icon {
+        width: 40px;
+        height: 40px;
+    }
+
+    .designation {
+        font-size: 1.5rem;
+    }
+
+    .name {
+        font-size: 4rem;
+        margin-top: 0.8rem;
+        margin-bottom: 1.438rem;
+    }
+}
+
+@media screen and (max-width: 450px) {
+    .designation {
+        font-size: var(--fs-3);
+    }
+
+    .name {
+        font-size: var(--fs-heading);
+    }
+}
+
+@media screen  and (max-width: 380px) {
+    .hero-sec {
+        row-gap: 1.5rem;
+    }
+
+    .hero-img img {
+        width: 18rem;
+    }   
+}
+
+@media screen and (max-width: 300px) {
+    body {
+        padding-top: 6rem;
+    }
+    .hero-img img {
+        width: 10rem;
+    }
+
+    .designation {
+        font-size: 1rem;
+    }
+
+    .name {
+        font-size: 2rem;
+    }
+
+    .hero-icons {
+        gap: 20px;
+    }
+
+    .hero-icon {
+        width: 30px;
+        height: 30px;
+    }
+}
+/* ------ End of Hero Section ------ */
